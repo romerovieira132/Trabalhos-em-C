@@ -9,9 +9,8 @@ void insertionSort();
 
 int main() {
     int v = 100;
-    int i = 0, j, igual;
+    int i = 0, j, igual, op;
     int num0[v], num1[v], num2[v], num3[v];
-    int op;
 
     srand(time(NULL));
 
