@@ -9,7 +9,7 @@ void insertionSort();
 
 int main() {
     int v = 100;
-    int i = 0, j, igual, op;
+    int i = 0, j, igual, op, t = 0;
     int num0[v], num1[v], num2[v], num3[v];
 
     srand(time(NULL));
@@ -41,29 +41,35 @@ int main() {
         }
         printf("Numeros alearios sem ordenação.");
         printf("\n\n");
+
     } else if (op == 2) {
-        bubbleSort(num1, v);
+        bubbleSort(num1, v, t);
         for(i = 0; i < 100; i++){
             printf("[%d]: %d\n", i, num1[i]);
         }
         printf("Numeros ordenação pelo bubbleSort.");
         printf("\n\n");
+
     } else if (op == 3) {  
         selectionSort(num2, v);
         for(i = 0; i < 100; i++){
             printf("[%d]: %d\n", i, num2[i]);
         }
         printf("Numeros ordenação pelo selectionSort.");
+                printf("numero de comparações %d", t);
         printf("\n\n");
+
     } else if (op == 4) {
-        insertionSort(num3, v);
+        insertionSort(num3, v, t);
         for(i = 0; i < 100; i++){
             printf("[%d]: %d\n", i, num3[i]);
         }
         printf("Numeros ordenação pelo insertionSort.");
         printf("\n\n");
+
     }    else if (op == 5) {
         printf("A arvore vai aparecer aqui");
+
     } else if (op == 6) {
         printf("Obrigado por usar nosso codigo.\n");
         printf("Saindo...\n");
@@ -107,7 +113,7 @@ void selectionSort(int *arra, int tam) {
     int min = i;
     for (int j = i + 1; j < tam; j++)
       if (arra[j] < arra[min]) min = j;
-
+      
     if (min != i)
     {
       int temp = arra[i];
